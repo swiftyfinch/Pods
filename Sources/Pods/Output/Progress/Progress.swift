@@ -1,8 +1,8 @@
 //
 //  Progress.swift
-//  Rugby
+//  Pods
 //
-//  Created by Vyacheslav Khorkov on 30.05.2021.
+//  Created by Vyacheslav Khorkov on 06.11.2021.
 //  Copyright © 2021 Vyacheslav Khorkov. All rights reserved.
 //
 

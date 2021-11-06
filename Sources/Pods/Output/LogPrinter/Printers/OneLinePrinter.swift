@@ -1,8 +1,8 @@
 //
 //  OneLinePrinter.swift
-//  Rugby
+//  Pods
 //
-//  Created by Vyacheslav Khorkov on 19.04.2021.
+//  Created by Vyacheslav Khorkov on 06.11.2021.
 //  Copyright © 2021 Vyacheslav Khorkov. All rights reserved.
 //
 

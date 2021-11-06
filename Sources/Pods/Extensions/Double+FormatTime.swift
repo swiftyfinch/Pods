@@ -1,6 +1,6 @@
 //
 //  Double+FormatTime.swift
-//  Rugby
+//  Pods
 //
 //  Created by Vyacheslav Khorkov on 04.01.2021.
 //  Copyright © 2021 Vyacheslav Khorkov. All rights reserved.

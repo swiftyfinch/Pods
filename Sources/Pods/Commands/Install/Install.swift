@@ -7,12 +7,22 @@
 //
 
 import ArgumentParser
-import Files
 import Foundation
 
 struct Install: ParsableCommand {
-    @Flag(name: .shortAndLong, help: "Suppress output.") var quiet = false
+    @Flag(name: .shortAndLong, help: "Suppress command output.") var quiet = false
     @Flag(name: .long, inversion: .prefixedNo, help: "Play bell sound on finish.") var bell = true
+
+    static var configuration: CommandConfiguration = .init(
+        abstract: """
+        Using \("pod install".yellow) in a more convenient way.
+        • Automagically adding prefix \("bundle exec".yellow) if bundler env found;
+        • Handling bundler \("missing gems".yellow) error;
+        • Handling cocoapods \("out-of-date source repos".yellow) error;
+        • Output fancy log and animations;
+        • Playing bell sound in the end.
+        """
+    )
 
     mutating func run() throws {
         try WrappedError.wrap(playBell: bell) {
@@ -23,10 +33,10 @@ struct Install: ParsableCommand {
     private func wrappedRun() throws {
         var tries = 2
         var handledErrorCodes: Set<Int> = []
-        let useBundler = Folder.current.containsFile(at: "Gemfile")
+        let useBundler = FileManager.contains(file: "Gemfile")
         while tries > 0 {
             do {
-                return try runCommand("pod install\(quiet ? " --silent" : "")", useBundler: useBundler)
+                return try runCommand("pod install", quietArg: "--silent", useBundler: useBundler)
             } catch let error as ErrorCodeProvidable {
                 do {
                     try handle(error: error,
@@ -50,7 +60,6 @@ struct Install: ParsableCommand {
 
         // Throw error back if can't handle error code
         if !(try handle(errorCode: error.errorCode, useBundler: useBundler)) { throw error }
-
         handledErrorCodes.insert(error.errorCode)
     }
 
@@ -58,11 +67,11 @@ struct Install: ParsableCommand {
         switch errorCode {
         case 7:
             print("🚑 Missing gems. Let's try ".yellow + "`bundle install`".yellow)
-            try runCommand("bundle install\(quiet ? " --quiet" : "")")
+            try runCommand("bundle install", quietArg: "--quiet")
             return true
         case 31:
             print("🚑 Out-of-date source repos. Let's try ".yellow + "`pod repo update`".yellow)
-            try runCommand("pod repo update\(quiet ? " --silent" : "")", useBundler: useBundler)
+            try runCommand("pod repo update", quietArg: "--silent", useBundler: useBundler)
             return true
         default:
             print("🚑 Unknown error code.".yellow)
@@ -70,11 +79,13 @@ struct Install: ParsableCommand {
         }
     }
 
-    private func runCommand(_ command: String, useBundler: Bool = false) throws {
-        let command = useBundler ? "bundle exec " + command : command
-        let printer = PodsPrinter(title: "🌱 " + command, verbose: !quiet)
+    private func runCommand(_ command: String, quietArg: String, useBundler: Bool = false) throws {
+        var command = useBundler ? "bundle exec " + command : command
+        let commandOutput = command
+        command += quiet ? " " + quietArg : ""
+        let printer = PodsPrinter(title: "🌱 " + commandOutput, verbose: !quiet)
         if quiet {
-            try printer.spinner("🌱 " + command.yellow) {
+            try printer.spinner("🌱 " + commandOutput.green) {
                 try shell("BUNDLER_FORCE_TTY=1 " + command)
             }
         } else {

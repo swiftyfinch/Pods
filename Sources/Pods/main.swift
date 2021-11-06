@@ -10,7 +10,10 @@ import ArgumentParser
 
 struct Pods: ParsableCommand {
     static var configuration = CommandConfiguration(
-        abstract: "TODO",
+        abstract: """
+        🌱 Cozy pod install
+        📖 \("https://github.com/swiftyfinch/Pods".cyan) (⌘ + double click on link)
+        """,
         version: "0.1",
         subcommands: [Install.self],
         defaultSubcommand: Install.self
