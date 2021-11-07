@@ -65,11 +65,12 @@ struct Install: ParsableCommand {
 
     private func handle(errorCode: Int, useBundler: Bool) throws -> Bool {
         switch errorCode {
-        case 7:
+        case 7: // https://github.com/rubygems/bundler/blob/master/lib/bundler/errors.rb#L35
             print("🚑 Missing gems. Let's try ".yellow + "`bundle install`".yellow)
             try runCommand("bundle install", quietArg: "--quiet")
             return true
-        case 31:
+        case 31, 1: // https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/command/install.rb#L25
+            // Yeah, it's dangerous to handle error code 1 in that way. But let's try.
             print("🚑 Out-of-date source repos. Let's try ".yellow + "`pod repo update`".yellow)
             try runCommand("pod repo update", quietArg: "--silent", useBundler: useBundler)
             return true
