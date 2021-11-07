@@ -31,7 +31,7 @@ struct Install: ParsableCommand {
     }
 
     private func wrappedRun() throws {
-        var tries = 2
+        var tries = 3
         var handledErrorCodes: Set<Int> = []
         let useBundler = FileManager.contains(file: "Gemfile")
         while tries > 0 {
