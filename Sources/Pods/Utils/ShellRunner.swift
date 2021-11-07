@@ -53,8 +53,11 @@ extension ShellRunner {
             readErrorStreams.wait()
             return stdout ?? ""
         } catch let error as CommandError {
-            throw ShellError.common(stderror?.cleanUpOutput() ?? error.description,
-                                    errorCode: error.errorcode)
+            let output = [stdout, stderror]
+                .compactMap { $0 }
+                .joined(separator: "\n")
+                .cleanUpOutput()
+            throw ShellError.common(output, errorCode: error.errorcode)
         }
     }
 }
