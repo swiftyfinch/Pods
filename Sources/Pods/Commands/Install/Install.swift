@@ -65,7 +65,7 @@ struct Install: ParsableCommand {
 
     private func handle(errorCode: Int, useBundler: Bool) throws -> Bool {
         switch errorCode {
-        case 7: // https://github.com/rubygems/bundler/blob/master/lib/bundler/errors.rb#L35
+        case 7, 11: // https://github.com/rubygems/bundler/blob/master/lib/bundler/errors.rb#L35
             print("🚑 Missing gems. Let's try ".yellow + "`bundle install`".yellow)
             try runCommand("bundle install", quietArg: "--quiet")
             return true
