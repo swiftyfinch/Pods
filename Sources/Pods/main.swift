@@ -14,7 +14,7 @@ struct Pods: ParsableCommand {
         🌱 Cozy pod install
         📖 \("https://github.com/swiftyfinch/Pods".cyan) (⌘ + double click on link)
         """,
-        version: "0.1",
+        version: "0.1.2",
         subcommands: [Install.self],
         defaultSubcommand: Install.self
     )
