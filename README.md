@@ -2,7 +2,7 @@
   <b>🌱 Cozy Pod Install</b>
 </p>
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/64660122/140637141-e0a341b3-9ede-4c6f-81e8-db95e457bfa6.mp4" width="600"/>
+  <img src="https://user-images.githubusercontent.com/64660122/194710052-dca8d92a-7262-41e5-8b92-ec2e460fccca.gif" width="600"/>
 </p>
 <p align="center">
   <a href="https://brew.sh"><img src="https://img.shields.io/badge/Homebrew-8B4513" /></a>
