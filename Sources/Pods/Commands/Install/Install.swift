@@ -95,7 +95,7 @@ struct Install: ParsableCommand {
                 try printShell(command)
                 printer.done()
             } catch {
-                printer.print("✕")
+                printer.print("✕".red)
                 throw error
             }
         }
