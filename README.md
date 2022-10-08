@@ -27,6 +27,13 @@ It's the Swift version of my older repository 🌱 [Pods Install](https://github
 You can read 📖 [more](https://swiftyfinch.github.io/en/2020-05-23-cozy-pod-install/) in my blog.
 <br>
 
+## Download binary with [Homebrew](https://brew.sh) 🍺
+
+```bash
+brew tap swiftyfinch/Pods https://github.com/swiftyfinch/Pods.git
+brew install pods
+```
+
 ## Quick start with <a href="https://github.com/yonaskolb/Mint">Mint</a> 🌱
 
 ```bash
