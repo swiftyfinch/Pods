@@ -1,7 +1,7 @@
 class Pods < Formula
   desc "🌱 Cozy pod install"
   homepage "https://github.com/swiftyfinch/Pods"
-  version "0.1.2"
+  version "1.0.0"
   url "https://github.com/swiftyfinch/Pods/releases/download/#{version}/pods.zip"
 
   def install

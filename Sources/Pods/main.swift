@@ -16,7 +16,7 @@ struct Pods: ParsableCommand {
         📖 \("https://github.com/swiftyfinch/Pods".cyan)
         (⌘ + double click on the link)
         """,
-        version: "0.1.2"
+        version: "1.0.0"
     )
     private static let logo = "🌱"
 
