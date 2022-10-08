@@ -4,12 +4,16 @@
 <p align="center">
   <img src="https://user-images.githubusercontent.com/64660122/194710052-dca8d92a-7262-41e5-8b92-ec2e460fccca.gif" width="600"/>
 </p>
-<p align="center">
+<p align="center">  
+  <a href="https://swiftpackageindex.com/swiftyfinch/Pods"><img src="https://img.shields.io/endpoint?color=orange&label=Swift&logo=swift&logoColor=white&url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fswiftyfinch%2FPods%2Fbadge%3Ftype%3Dswift-versions" /></a>
+  <a href="https://swiftpackageindex.com/swiftyfinch/Pods"><img src="https://img.shields.io/endpoint?label=Platform&url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fswiftyfinch%2FPods%2Fbadge%3Ftype%3Dplatforms" /></a>
+  <br>
   <a href="https://brew.sh"><img src="https://img.shields.io/badge/Homebrew-8B4513" /></a>
   <a href="https://github.com/yonaskolb/Mint"><img src="https://img.shields.io/badge/Mint-darkgreen?logo=leaflet&logoColor=white" /></a>
-  <a href="https://twitter.com/swiftyfinch"><img src="https://img.shields.io/badge/SwiftyFinch-blue?logo=twitter&logoColor=white" /></a>
+  <a href="https://swiftpackageindex.com/swiftyfinch/Pods"><img src="https://img.shields.io/badge/Swift_Package_Index-red?logo=swift&logoColor=white" /></a>
   <br>
   <img src="https://img.shields.io/badge/Press_★_for_pay_respect-white?logo=github&logoColor=black" />
+  <a href="https://twitter.com/swiftyfinch"><img src="https://img.shields.io/badge/SwiftyFinch-blue?logo=twitter&logoColor=white" /></a>
 </p>
 
 ## Using `CocoaPods` in a more convenient way ☕️
