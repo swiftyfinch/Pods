@@ -90,7 +90,7 @@ struct Install: ParsableCommand {
                 try shell("BUNDLER_FORCE_TTY=1 " + command)
             }
         } else {
-            printer.print("⏱")
+            printer.print("⏰")
             do {
                 try printShell(command)
                 printer.done()
