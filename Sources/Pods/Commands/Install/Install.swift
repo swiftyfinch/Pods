@@ -84,9 +84,9 @@ struct Install: ParsableCommand {
         var command = useBundler ? "bundle exec " + command : command
         let commandOutput = command
         command += quiet ? " " + quietArg : ""
-        let printer = PodsPrinter(title: "🌱 " + commandOutput, verbose: !quiet)
+        let printer = PodsPrinter(title: "\(Pods.logo) \(commandOutput)", verbose: !quiet)
         if quiet {
-            try printer.spinner("🌱 " + commandOutput.green) {
+            try printer.spinner("\(Pods.logo) \(commandOutput.green)") {
                 try shell("BUNDLER_FORCE_TTY=1 " + command)
             }
         } else {
