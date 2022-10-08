@@ -9,9 +9,10 @@
 import ArgumentParser
 
 struct Pods: ParsableCommand {
+    static let logo = "🌱"
     static var configuration = CommandConfiguration(
         abstract: """
-        🌱 Cozy pod install
+        \(logo) Cozy pod install
         📖 \("https://github.com/swiftyfinch/Pods".cyan) (⌘ + double click on link)
         """,
         version: "0.1.2",
