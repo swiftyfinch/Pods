@@ -27,7 +27,7 @@ struct PodsPrinter: Printer {
     func done() {
         let time = ProcessInfo.processInfo.systemUptime - begin
         printers.forEach {
-            let value = formatter.format(text: "✓", time: time.output(), chop: $0.chop)
+            let value = formatter.format(text: "✓".green, time: time.output(), chop: $0.chop)
             $0.print(value)
             $0.done()
         }

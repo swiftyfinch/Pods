@@ -14,7 +14,7 @@ extension Printer {
             done()
             return result
         } catch {
-            print("✕")
+            print("✕".red)
             throw error
         }
     }
