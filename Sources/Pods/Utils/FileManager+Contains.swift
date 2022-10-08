@@ -9,9 +9,13 @@
 import Foundation
 
 extension FileManager {
-    static func contains(file: String) -> Bool {
+    static func containsUpToRoot(file: String) -> Bool {
         let manager = self.default
-        let current = manager.currentDirectoryPath
-        return manager.fileExists(atPath: current.appending("/" + file))
+        var current = manager.currentDirectoryPath
+        repeat {
+            if manager.fileExists(atPath: current.appending("/\(file)")) { return true }
+            current.append("/..")
+        } while current != "/"
+        return false
     }
 }
