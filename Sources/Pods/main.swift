@@ -13,7 +13,8 @@ struct Pods: ParsableCommand {
     static var configuration = CommandConfiguration(
         abstract: """
         \(logo) Cozy pod install
-        📖 \("https://github.com/swiftyfinch/Pods".cyan) (⌘ + double click on link)
+        📖 \("https://github.com/swiftyfinch/Pods".cyan)
+        (⌘ + double click on the link)
         """,
         version: "0.1.2",
         subcommands: [Install.self],
