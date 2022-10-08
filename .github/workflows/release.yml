@@ -13,7 +13,6 @@ on:
 
 permissions:
   contents: write
-  discussions: write
 
 jobs:
   bump:
@@ -53,7 +52,6 @@ jobs:
         with:
           name: 🌱 Pods ${{ env.release_tag }}
           generate_release_notes: true
-          discussion_category_name: Releases
           fail_on_unmatched_files: true
           files: pods.zip
           tag_name: ${{ env.release_tag }}
