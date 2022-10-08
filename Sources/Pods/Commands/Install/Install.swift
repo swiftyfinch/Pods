@@ -33,7 +33,7 @@ struct Install: ParsableCommand {
     private func wrappedRun() throws {
         var tries = 3
         var handledErrorCodes: Set<Int> = []
-        let useBundler = FileManager.contains(file: "Gemfile")
+        let useBundler = FileManager.containsUpToRoot(file: "Gemfile")
         while tries > 0 {
             do {
                 return try runCommand("pod install", quietArg: "--silent", useBundler: useBundler)
