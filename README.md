@@ -71,6 +71,5 @@ pods -q
 <br>
 
 ### `Author`
-
-Vyacheslav Khorkov\
+\
 Feel free to contact me 📮
