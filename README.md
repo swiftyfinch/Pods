@@ -71,5 +71,5 @@ pods -q
 <br>
 
 ### `Author`
-\
+
 Feel free to contact me 📮
