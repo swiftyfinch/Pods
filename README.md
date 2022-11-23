@@ -60,9 +60,9 @@ pods install
 # or just
 pods
 
-pods update Alamofire Snapkit
+pods "update Alamofire Snapkit"
 # or any subcommand
-pods <subcommand>
+pods "<subcommand>"
 ```
 ```bash
 # or in quiet mode (like in demo video)
